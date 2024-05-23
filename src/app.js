@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const { default: helmet } = require("helmet");
@@ -12,15 +13,12 @@ app.use(helmet());
 app.use(compression());
 
 // init db
+require("./dbs/init.mongodb");
+// const { checkOverload } = require("./helpers/check.connect");
+// checkOverload();
 
 // init routes
-app.get("/", (req, res, next) => {
-  const srtCompress = "Hello con ga";
-  return res.status(200).json({
-    message: "Hello con ga",
-    metadata: srtCompress.repeat(20000),
-  });
-});
+app.use('/', require("./routes"));
 
 // handle error
 

@@ -1,0 +1,4 @@
+### SigUp
+@ulr_dev=http://localhost:8080/v1/api/
+
+POST {{ulr_dev}}/shop/signup
