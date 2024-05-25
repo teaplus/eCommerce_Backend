@@ -2,3 +2,10 @@
 @ulr_dev=http://localhost:8080/v1/api/
 
 POST {{ulr_dev}}/shop/signup
+Content-Type: application/json
+
+{
+    "name": "Shops Tips",
+    "email": "hoaanhtuc04@gmail.com",
+    "password": "3Le7Tow2"
+}
